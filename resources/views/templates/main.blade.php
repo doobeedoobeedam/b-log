@@ -14,23 +14,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
 
-    <!-- My CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-
     {{-- Trix Editor --}}
     <link rel="stylesheet" type="text/css" href="/assets/plugins/trix/trix.css">
     <script type="text/javascript" src="/assets/plugins/trix/trix.js"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
     <style>
         trix-toolbar [data-trix-button-group="file-tools"],
         trix-toolbar .trix-button--icon-increase-nesting-level,
-        trix-toolbar .trix-button--icon-decrease-nesting-level {
-            display: none;
-        }
+        trix-toolbar .trix-button--icon-decrease-nesting-level {display: none;}
 
-        .img-preview {
-            width: 200px !important; 
-            height: 110px !important;
-        }
+        .img-preview {width: 200px !important; height: 110px !important;}
     </style>
 </head>
 
@@ -52,37 +47,7 @@
         </div>
     </div>
 
-    <!-- Javascript -->
-    <script>
-        function previewImage() {
-            const image = document.querySelector('#image');
-            const imgPreview = document.querySelector('.img-preview');
-
-            imgPreview.style.display = 'block';
-            // imgPreview.style.width = '200px';
-            // imgPreview.style.height = '110px';
-
-            const oFReader = new FileReader();
-            oFReader.readAsDataURL(image.files[0]);
-
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result;
-            }
-
-        };
-
-        // Post's Category
-        const title = document.querySelector('#title');
-        const slug = document.querySelector('#slug');
-
-        title.addEventListener('change', function() {
-            fetch('/dashboard/posts/createSlug?title=' + title.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
-    </script>
-
     <script type="text/javascript" src="/assets/plugins/popper.min.js"></script>
     <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
+    <script type="text/javascript" src="/assets/js/main.js"></script>
 </body>

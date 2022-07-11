@@ -16,15 +16,16 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run() {
+        \App\Models\User::factory(5)->create();     
+        
         User::create([
-            'image' => 'profile-sample.jpeg',
+            'image' => 'profile-images/default-profile-image.png',
             'name' => 'Kusuma Wecitra',
             'username' => 'c.0zie',
             'email' => 'citrac491@gmail.com',
-            'password' => bcrypt('password')
+            'password' => bcrypt('password'),
+            'role' => 'admin'
         ]);
-
-        \App\Models\User::factory(5)->create();           
 
         Category::create([
             'name' => 'Web Programming',

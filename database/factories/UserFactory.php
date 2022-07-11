@@ -18,7 +18,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'image' => 'profile-sample.jpeg',
+            'image' => 'profile-images/default-profile-image.png',
             'username' => $this->faker->unique()->userName(),
             'name' => $this->faker->name(),
             'email' => $this->faker->safeEmail(),

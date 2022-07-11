@@ -3,9 +3,7 @@
 * Copyright 2013-2022 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
 */
-// 
-// Scripts
-// 
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -22,5 +20,44 @@ window.addEventListener('DOMContentLoaded', event => {
             localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
         });
     }
+});
 
+$('#btn-delete').click(function() {
+    var slug = $(this).data('slug');
+    var formAction = $('#formDelete').attr('action');
+    $('#formDelete').attr('action', '/dashboard/posts/'+slug);
+    // $('#hrefDelete').attr('href', '/dashboard/posts/'+slug);
+});
+
+$('#btn-delete-user').click(function() {
+    var id = $(this).data('id');
+    $('#formDelete').attr('action', '/dashboard/users/'+id);
+    // $('#formDelete').attr('href', '/dashboard/users/'+id);
+});
+
+function previewImage() {
+    const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview');
+
+    imgPreview.style.display = 'block';
+    // imgPreview.style.width = '200px';
+    // imgPreview.style.height = '110px';
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+
+    oFReader.onload = function(oFREvent) {
+        imgPreview.src = oFREvent.target.result;
+    }
+
+};
+
+// Post's Category
+const title = document.querySelector('#title');
+const slug = document.querySelector('#slug');
+
+title.addEventListener('change', function() {
+    fetch('/dashboard/posts/createSlug?title=' + title.value)
+        .then(response => response.json())
+        .then(data => slug.value = data.slug)
 });

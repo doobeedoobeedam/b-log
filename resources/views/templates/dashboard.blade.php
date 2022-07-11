@@ -4,73 +4,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+    <title>b-l0g | {{ $title }}</title>
+
+    <!-- FontAwesome JS -->
     <script defer src="/assets/plugins/fontawesome/js/all.js"></script>
-    <link href="/assets/css/dashboard.css" rel="stylesheet">
+
     {{-- Trix Editor --}}
     <link rel="stylesheet" type="text/css" href="/assets/plugins/trix/trix.css">
     <script type="text/javascript" src="/assets/plugins/trix/trix.js"></script>
+    
+    <!-- My CSS -->
+    <link href="/assets/css/dashboard.css" rel="stylesheet">
+
     <style>
         trix-toolbar [data-trix-button-group="file-tools"],
         trix-toolbar .trix-button--icon-increase-nesting-level,
-        trix-toolbar .trix-button--icon-decrease-nesting-level {
-            display: none;
-        }
-
-        .img-preview {
-            width: 200px !important;
-            height: 110px !important;
-        }
-
-    </style>
-    <title>b-l0g | {{ $title }}</title>
-    <style>
-        .logo-title {
-            font-family: 'BioRhyme', serif;
-            color: #7f98fc !important;
-        }
-
-        .alert {
-            margin-top: 20px;
-        }
-
-        .border-success {
-            border-color: #39d65b !important;
-        }
-
-        .text-success {
-            color: #39d65b !important;
-        }
-
-        .border-danger {
-            border-color: #f36161 !important;
-        }
-
-        .bg-danger {
-            background: #f36161 !important;
-        }
-
-        .text-danger {
-            color: #f36161 !important;
-        }
-
-        .bg-primary {
-            background: #7f98fc !important;
-        }
-
-        .text-primary {
-            color: #7f98fc !important;
-        }
-
-        .navbar,
-        .sidebar-heading {
-            height: 70px !important;
-        }
-
+        trix-toolbar .trix-button--icon-decrease-nesting-level {display: none;}
+        .img-preview {width: 200px !important;height: 110px !important;}.logo-title{font-family:BioRhyme,serif;color:#7f98fc!important}.alert{margin-top:20px}.border-success{border-color:#39d65b!important}.text-success{color:#39d65b!important}.border-danger{border-color:#f36161!important}.bg-danger{background:#f36161!important}.text-danger{color:#f36161!important}.bg-primary{background:#7f98fc!important}.text-primary{color:#7f98fc!important}.navbar,.sidebar-heading{height:70px!important}
     </style>
 </head>
 <body>
     @include('templates/alert')
 
+    <!-- Modal delete -->
+    <div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm p-4">
+            <div class="modal-content border-0 shadow-sm">
+                <h6 class="modal-title text-center mt-4" id="deleteLabel">Delete the post now?</h6>
+                <div class="modal-footer border-0 justify-content-center">
+                    <button type="button" class="btn bg-light rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                    <form method="POST" id="formDelete">
+                        @csrf
+                        @method('delete')
+                        {{-- <a id="hrefDelete">data</a> --}}
+                        <button type="submit" class="btn bg-danger text-white rounded-pill px-4">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="d-flex" id="wrapper">
         <!-- Sidebar-->
         <div class="border-end bg-white" id="sidebar-wrapper">
@@ -126,38 +99,8 @@
         </div>
     </div>
 
-    <!-- Javascript -->
-    <script>
-        function previewImage() {
-            const image = document.querySelector('#image');
-            const imgPreview = document.querySelector('.img-preview');
-
-            imgPreview.style.display = 'block';
-            // imgPreview.style.width = '200px';
-            // imgPreview.style.height = '110px';
-
-            const oFReader = new FileReader();
-            oFReader.readAsDataURL(image.files[0]);
-
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result;
-            }
-
-        };
-
-         // Post's Category
-        const title = document.querySelector('#title');
-        const slug = document.querySelector('#slug');
-
-        title.addEventListener('change', function() {
-            fetch('/dashboard/posts/createSlug?title=' + title.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
-
-    </script>
     <script type="text/javascript" src="/assets/js/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
 </body>
 </html>
