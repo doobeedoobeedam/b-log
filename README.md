@@ -2,6 +2,13 @@
 
 Ini aplikasi bikinnya pake niat untuk nuntasin belajar laravel, dengan tetep mempertimbangkan tampilan supaya ketjeh, alhasil pengerjaannya jadi lama di tampilan.
 
+## Daftar isi
+
+- [Teknologi yang digunakan](#teknologi-yang-digunakan)
+- [Guideline](#guideline)
+- [Database](#database)
+- [Screenshots](#screenshots)
+
 ## Teknologi yang digunakan
 
 - **[PHP >= 8.0 ](https://www.php.net/)** - Bahasa yang dipake
