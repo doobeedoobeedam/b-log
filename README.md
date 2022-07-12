@@ -5,21 +5,27 @@ Ini aplikasi bikinnya pake niat untuk nuntasin belajar laravel, dengan tetep mem
 ## Daftar isi
 
 - [Teknologi yang digunakan](#teknologi-yang-digunakan)
-- [Guideline](#guideline)
+- [Panduan install](#panduan-install)
 - [Database](#database)
 - [Screenshots](#screenshots)
 
 ## Teknologi yang digunakan
 
 - **[PHP >= 8.0 ](https://www.php.net/)** - Bahasa yang dipake
-- **[Laravel](https://laravel.com/)** - Framework PHP
-- **[Bootstrap](https://getbootstrap.com/)** - Framework CSS
+- **[Laravel >= 9.0](https://laravel.com/docs/9.x)** - Framework PHP
+- **[Bootstrap 5](https://getbootstrap.com/)** - Framework CSS
 - **[FontAwesome](https://fontawesome.com/)** - Ikon-ikon yang digunakan
 - **[VSCode](https://code.visualstudio.com/)** - Text editor
-- **[Faker](https://fakerphp.github.io/)** - Untuk bikin data fake :>
+- **[Faker](https://fakerphp.github.io/)** - Untuk bikin data palsu
 - **[Trix Editor](https://trix-editor.org/)** - Untuk bikin text editor
 
-## Guideline
+## Screenshots
+
+![home](./.pict/index.png)
+
+I hope you will await another pictures 😊😊😊
+
+## Panduan install
 
 ### Clone repo
     git clone https://github.com/doobeedoobeedam/b-log.git
@@ -51,7 +57,3 @@ Ini aplikasi bikinnya pake niat untuk nuntasin belajar laravel, dengan tetep mem
 ## Database
 
 Masih dikembangkan :>
-
-## Screenshots
-
-Belum siap tampil
