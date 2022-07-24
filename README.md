@@ -5,9 +5,8 @@ B-log adalah website yang memungkinkan untuk memposting, mengedit, menyimpan, da
 ## Daftar isi
 
 - [Teknologi yang digunakan](#teknologi-yang-digunakan)
-- [Panduan install](#panduan-install)
-- [Database](#database)
 - [Screenshots](#screenshots)
+- [Panduan install](#panduan-install)
 
 ## Teknologi yang digunakan
 
