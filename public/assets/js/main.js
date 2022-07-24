@@ -22,19 +22,6 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 });
 
-$('#btn-delete').click(function() {
-    var slug = $(this).data('slug');
-    var formAction = $('#formDelete').attr('action');
-    $('#formDelete').attr('action', '/dashboard/posts/'+slug);
-    // $('#hrefDelete').attr('href', '/dashboard/posts/'+slug);
-});
-
-$('#btn-delete-user').click(function() {
-    var id = $(this).data('id');
-    $('#formDelete').attr('action', '/dashboard/users/'+id);
-    // $('#formDelete').attr('href', '/dashboard/users/'+id);
-});
-
 function previewImage() {
     const image = document.querySelector('#image');
     const imgPreview = document.querySelector('.img-preview');

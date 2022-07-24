@@ -38,15 +38,6 @@
                     @enderror
                 </div>
             </div>
-            {{-- <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password', $user->password) }}">
-                @error('password')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div> --}}
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
                 <input type="hidden" name="oldImage" value="{{ $user->image }}">

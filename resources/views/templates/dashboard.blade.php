@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo.png') }}" type="image/png">
     <title>b-l0g | {{ $title }}</title>
 
     <!-- FontAwesome JS -->
-    <script defer src="/assets/plugins/fontawesome/js/all.js"></script>
+    <script defer src="{{ asset('assets/plugins/fontawesome/js/all.js') }}"></script>
 
     {{-- Trix Editor --}}
-    <link rel="stylesheet" type="text/css" href="/assets/plugins/trix/trix.css">
-    <script type="text/javascript" src="/assets/plugins/trix/trix.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/trix/trix.css') }}">
+    <script type="text/javascript" src="{{ asset('assets/plugins/trix/trix.js') }}"></script>
     
     <!-- My CSS -->
-    <link href="/assets/css/dashboard.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet">
 
     <style>
         trix-toolbar [data-trix-button-group="file-tools"],
@@ -36,7 +36,6 @@
                     <form method="POST" id="formDelete">
                         @csrf
                         @method('delete')
-                        {{-- <a id="hrefDelete">data</a> --}}
                         <button type="submit" class="btn bg-danger text-white rounded-pill px-4">Delete</button>
                     </form>
                 </div>
@@ -99,8 +98,22 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="/assets/js/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery-3.4.1.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script>
+        const formDelete = document.querySelector('#formDelete');
+        const btnDeletePost = document.querySelectorAll('#btn-delete-post');
+        btnDeletePost.forEach(btn => btn.addEventListener('click', function() {
+            var slug = this.dataset.slug;
+            formDelete.setAttribute('action', '/dashboard/posts/'+slug);
+        }));
+                
+        const btnDeleteUser = document.querySelectorAll('#btn-delete-user');
+        btnDeleteUser.forEach(btn => btn.addEventListener('click', function() {
+            var id = this.dataset.id;
+            formDelete.setAttribute('action', '/dashboard/users/'+id);
+        }));
+    </script>
 </body>
 </html>

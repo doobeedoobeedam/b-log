@@ -20,7 +20,7 @@
             </div>
             <div class="form mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control rounded-0 border-0 ps-0 @error('password') is-invalid @enderror" id="password" name="password" placeholder="John Doe">
+                <input type="password" class="form-control rounded-0 border-0 ps-0 @error('password') is-invalid @enderror" id="password" name="password" placeholder="******">
                 @error('password')
                 <div class="invalid-feedback">
                     {{ $message }}

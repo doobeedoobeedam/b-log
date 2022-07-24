@@ -28,7 +28,7 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <img src="/assets/img/default-post-image.png" class="img-preview mb-3 d-block col-sm-5">
+                <img src="{{ asset('assets/img/default-post-image.png') }}" class="img-preview mb-3 d-block col-sm-5">
                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" onchange="previewImage()">
                 @error('image')
                 <div class="invalid-feedback">

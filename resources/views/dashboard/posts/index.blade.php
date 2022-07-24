@@ -27,7 +27,7 @@
                         <td>
                             <a href="/dashboard/posts/{{ $post->slug }}" class="text-decoration-none text-info"><i class="fas fa-eye"></i></a>
                             <a href="/dashboard/posts/{{ $post->slug }}/edit" class="text-decoration-none text-warning mx-2"><i class="fas fa-pencil-alt"></i></a>
-                            <button class="text-decoration-none text-danger border-0 bg-transparent" id="btn-delete" data-slug="{{ $post->slug }}" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="fas fa-times"></i></button>
+                            <button class="text-decoration-none text-danger border-0 bg-transparent" id="btn-delete-post" data-slug="{{ $post->slug }}" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="fas fa-times"></i></button>
                         </td>
                     </tr>
                 @endforeach

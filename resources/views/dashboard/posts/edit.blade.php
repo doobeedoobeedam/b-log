@@ -33,7 +33,7 @@
                 @if ($post->image)
                     <img src="{{ asset('storage/' . $post->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
                 @else
-                    <img src="/assets/img/default-post-image.png" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                    <img src="{{ asset('assets/img/default-post-image.png') }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
                 @endif
                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" onchange="previewImage()">
                 @error('image')

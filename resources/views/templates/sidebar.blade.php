@@ -32,7 +32,7 @@
 
 <div class="dropdown pb-3">
     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="/assets/img/profile-sample.jpeg" alt="{{ auth()->user()->name }}" width="30" height="30" class="rounded-circle">
+        <img src="{{ asset('assets/img/profile-sample.jpeg') }}" alt="{{ auth()->user()->name }}" width="30" height="30" class="rounded-circle">
         <span class="d-none d-sm-inline ms-2"> Kusuma Wecitra</span>
     </a>
     <ul class="dropdown-menu text-small border-0 shadow">

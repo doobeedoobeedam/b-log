@@ -13,7 +13,7 @@
             <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="card-img-top img-fluid" alt="{{ $post->title }}">
             @endif
         </div>
-        <div class="px-5">
+        <div class="px-5" style="color: #707070">
             <p class="card-text">{!! $post->content !!}</p>
         </div>
     </div>

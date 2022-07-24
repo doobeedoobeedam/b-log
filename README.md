@@ -1,6 +1,6 @@
 # Blog App
 
-Ini aplikasi bikinnya pake niat untuk nuntasin belajar laravel, dengan tetep mempertimbangkan tampilan supaya ketjeh, alhasil pengerjaannya jadi lama di tampilan.
+B-log adalah website yang memungkinkan untuk memposting, mengedit, menyimpan, dan melihat postingan blog, dibuat dengan PHP dan framework Laravel. Dibuat dalam rangka menuntaskan pembelajaran Laravel Basic.
 
 ## Daftar isi
 
@@ -18,42 +18,63 @@ Ini aplikasi bikinnya pake niat untuk nuntasin belajar laravel, dengan tetep mem
 - **[VSCode](https://code.visualstudio.com/)** - Text editor
 - **[Faker](https://fakerphp.github.io/)** - Untuk bikin data palsu
 - **[Trix Editor](https://trix-editor.org/)** - Untuk bikin text editor
+- **[Unsplash API](https://unsplash.com/developers/)** - Untuk ambil URL gambar secara dinamis
 
 ## Screenshots
 
-![home](./.pict/index.png)
+### Home
+![home](./.pict/index.jpg)
 
-I hope you will await another pictures 😊😊😊
+### Sign In
+![home](./.pict/signin.jpg)
+
+### Sign Up
+![home](./.pict/signup.jpg)
+
+### Dashboard General
+![home](./.pict/dashboard-general.jpg)
+
+### Dashboard General - New Post
+![home](./.pict/new-post.jpg)
+
+### Dashboard General - Profile
+![home](./.pict/profile.jpg)
+
+### Dashboard Admin
+![home](./.pict/dashboard-admin.jpg)
+
+### Dashboard Admin - Users
+![home](./.pict/dashboard-admin-users.jpg)
+
+### Dashboard Admin - Categories
+![home](./.pict/dashboard-admin-categories.jpg)
+
 
 ## Panduan install
 
-### Clone repo
-    git clone https://github.com/doobeedoobeedam/b-log.git
+Untuk menjalankan aplikasi ini diharuskan install XAMPP dan punya (setidaknya) satu web browser yang terinstall di komputer.
 
-### Switch ke folder repo
+```bash
+# Clone repository ini atau download di
+git clone https://github.com/doobeedoobeedam/b-log.git
 
-    cd b-log
+# Switch ke folder repo
+cd b-log
 
-### Install semua dependencies pakai composer
+# Install semua dependencies pakai composer
+composer install
 
-    composer install
+# Copy file env.example dan atur konfigurasi yang diperlukan di file .env
+cp .env.example .env
 
-### Copy file **.env.example** dan atur konfigurasi yang diperlukan di file **.env**
+# Generate application key baru
+php artisan key:generate
 
-    cp .env.example .env
+#Jalanin migration dan seeder
+php artisan migrate --seed
 
-### Generate application key baru
+#Jalanin local development server
+php artisan serve
+```
 
-    php artisan key:generate
-
-### Jalanin migration dan seeder
-
-    php artisan migrate --seed
-
-### Jalanin local development server
-
-    php artisan serve
-
-## Database
-
-Masih dikembangkan :>
+Berhubung project ini saya selesaikan sendiri, namun banyak fitur dan lain hal yang bisa diperbaiki -- maka bantuan kalian sangat saya apresiasi, jadi jangan ragu untuk pull request dan buat perubahan pada project ini.

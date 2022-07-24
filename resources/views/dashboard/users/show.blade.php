@@ -1,11 +1,11 @@
 @extends('templates/dashboard')
 @section('content')
-    <div class="my-4 mt-5 py-3 px-5">
+    <div class="my-4 mt-5 py-3 px-5 shadow-sm">
         <div class="row">
             <div class="col-md-3 mb-3">
                 <img src="{{ asset('storage/' . $user->image) }}" style="width: 100%" class="rounded-circle" alt="{{ $user->name }}">
             </div>
-            <div class="col-md-9 mb-3">
+            <div class="col-md-9 mb-3 align-self-center"">
                 <div class="border-bottom p-2 mb-3">
                     <i class="fas fa-user text-primary me-2"></i> {{ $user->name }}
                 </div>
